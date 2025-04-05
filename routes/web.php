@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProjectsController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,5 +20,17 @@ Route::get('/', function () {
 //    App\Models\Project::create(request(['title','description']));
 //    // redirect
 // });
-Route::post('projects', [ProjectsController::class, 'store']);
-Route::get('projects', [ProjectsController::class, 'index']);
+
+Auth::routes(); // Add this line
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('projects', [ProjectsController::class, 'index'])->name('projects.index');
+    Route::post('projects', [ProjectsController::class, 'store'])->name('projects.store');
+    Route::get('projects/create', [ProjectsController::class, 'create'])->name('projects.create');
+    Route::get('projects/{project}', [ProjectsController::class, 'show'])->name('projects.show');
+    // ... other authenticated project routes
+});
+
+Route::get('/', function () {
+    return view('welcome');
+});
