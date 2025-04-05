@@ -1,10 +1,10 @@
 <?php
 // The basic object-store, since we want to avoid the pain that is setting up an old enough PGSQL.
 
-include('database/model/project.php');
+include('config/store.php');
 
-
-$GLOBALS['db_path'] = 'store/';
+if (!is_dir($GLOBALS['db_path']))
+    mkdir($GLOBALS['db_path'], 0777);
 
 
 // List all objects of the given $type, by ID.
