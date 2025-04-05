@@ -8,7 +8,7 @@ class Project {
 	var $description;
 }
 
-include('config/store.php');
+include_relative('config/store.php');
 
 if (!is_dir($GLOBALS['db_path'] . '/projects'))
 	mkdir($GLOBALS['db_path'] . '/projects', 0777);
