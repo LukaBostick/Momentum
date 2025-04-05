@@ -5,7 +5,9 @@
         "build": "vite build",
         "dev": "vite",
         "prepare": "husky install",
-        "format": "npx prettier --write resources/"
+        "format": "npx prettier --write resources/",
+        "watch": "vite build --watch",
+        "hot": "vite --host"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",

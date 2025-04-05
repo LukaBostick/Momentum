@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,6 +6,21 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans:
+        "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+.button {
+    background-color: darkred; /* Assuming ".bg-blue" maps to the color blue */
+    color: white; /* Assuming ".text-white" maps to the color white */
+    text-decoration: none; /* This is the CSS equivalent of ".no-underline" */
+    border-radius: 0.5rem; /* Assuming ".rounded-lg" maps to a large border-radius, often 0.5rem or similar */
+    font-size: 0.875rem; /* Assuming ".text-sm" maps to a small font size, often 0.875rem (14px) */
+    padding-top: 0.5rem; /* Assuming ".py-2" maps to a vertical padding of 0.5rem (8px) on top */
+    padding-bottom: 0.5rem; /* Assuming ".py-2" maps to a vertical padding of 0.5rem (8px) on bottom */
+    padding-left: 1.25rem; /* Assuming ".px-5" maps to a horizontal padding of 1.25rem (20px) on the left */
+    padding-right: 1.25rem; /* Assuming ".px-5" maps to a horizontal padding of 1.25rem (20px) on the right */
+    box-shadow: 0 2px 7px 0 #b0eaff; /* Converted "pt" to "px" for broader compatibility */
 }
