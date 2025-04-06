@@ -22,6 +22,11 @@ function list_objects($type) {
 	return $objs;
 }
 
+// Returns whether or not an object already exists.
+function object_exists($type, $id) {
+	return in_array($id, list_objects($type));
+}
+
 // Write an object, potentially overriding its previous version.
 // TODO: File-lock, to prevent simultaneus writes.
 function write_object($obj) {
