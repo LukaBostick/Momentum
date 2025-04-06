@@ -23,5 +23,12 @@ preg_match_all('/[a-z]*/', strtolower($new_proj->title), $title_ascii);
 foreach($title_ascii[0] as $title_ascii_part)
     $new_proj->id = $new_proj->id . $title_ascii_part;
 
-object_write($new_proj);
+if ($new_proj->id == "create" || $new_proj->id == "delete" || $new_proj->id == "index") {
+	$GLOBALS['error'] = "title";
+	$GLOBALS['errorMessage'] = "Your project’s title can’t be “create”, “delete”, or “index”!";
+	include(relative('views/projects/create.php'));
+	exit;
+}
+
+write_object($new_proj);
 ?>

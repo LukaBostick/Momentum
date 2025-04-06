@@ -8,8 +8,9 @@ $GLOBALS['GET'] = array("/" => "views/index.php",
 	                    "/resources" => "views/verbatim.php", "/public" => "views/verbatim.php");
 // The list of URIs associated with their files in post/.
 $GLOBALS['POST'] = array("/register" => "controllers/auth/register.php",
-	                     "/login" => "controllers/auth/login.php",
-						 "/projects/create" => "controllers/projects/create.php");
+                         "/login" => "controllers/auth/login.php",
+                         "/projects/create" => "controllers/projects/create.php",
+                         "/projects" => "controllers/projects/task.php");
 
 
 // Execute the appropraite file for the given URI.

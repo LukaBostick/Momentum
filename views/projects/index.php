@@ -1,4 +1,9 @@
 <?php
+if (basename(getenv("REQUEST_URI")) != "projects") {
+	include(relative('views/projects/show.php'));
+	return;
+}
+
 include(relative('database/store.php'));
 include(relative('database/model/project.php'));
 
@@ -26,6 +31,7 @@ include(relative('views/header.php'));
 			foreach($projects as $project_id) {
 				$project = find_object('project', $project_id);
 			?>
+				<a href="/projects/<?php echo $project_id; ?>">
 			<div class="w-1/3 px-3 pb-6">
 				<div class="rounded bg-white p-5 shadow" style="height: 200px">
 					<h3 class="py-4 text-xl font-normal">
@@ -33,11 +39,13 @@ include(relative('views/header.php'));
 					</h3>
 
 					<div class="text-gray-500">
-						<?php echo $project->description; }?>
+						<?php echo $project->description; } ?>
 					</div>
 				</div>
 			</div>
+				</a>
 		</main>
+
 <?php
-include(relative('views/footer.php'));
+//include(relative('views/footer.php');
 ?>
