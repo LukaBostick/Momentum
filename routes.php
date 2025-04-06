@@ -1,16 +1,18 @@
 <?php
 
 // The list of URIs associated with their views in get/.
-$GLOBALS['GET'] = array("/" => "welcome.php", "/projects" => "projects/index.php",
-						"/login" => "auth/login.php", "/register" => "auth/register.php",
-	                    "/resources" => "verbatim.php", "/public" => "verbatim.php");
+$GLOBALS['GET'] = array("/" => "views/welcome.php", "/projects" => "views/projects/index.php",
+	                    "/login" => "views/auth/login.php", "/register" => "views/auth/register.php",
+	                    "/logout" => "controllers/auth/logout.php",
+	                    "/resources" => "views/verbatim.php", "/public" => "views/verbatim.php");
 // The list of URIs associated with their files in post/.
-$GLOBALS['POST'] = array("/register" => "auth/register.php", "/login" => "auth/login.php");
+$GLOBALS['POST'] = array("/register" => "controllers/auth/register.php",
+	                     "/login" => "controllers/auth/login.php");
 
 
 // Execute the appropraite file for the given URI.
 function route($uri, $method) {
-	include(relative(($method == "GET" ? "views/" : "controllers/") . find_route($uri, $method)));
+	include(relative(find_route($uri, $method)));
 }
 
 // Find the appropriate file to execute for a given URI.
