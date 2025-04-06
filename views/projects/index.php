@@ -1,12 +1,9 @@
 <?php
-include('database/store.php');
-include('database/model/project.php');
-?>
+include_relative('database/store.php');
+include_relative('database/model/project.php');
 
-<html>
-	<head>
-	</head>
-	<body>
+include_relative('views/header.php');
+?>
 		<header class="mb-3 flex items-center py-4">
 			<div class="flex w-full items-center justify-between">
 				<h2 class="text-sm text-gray-500">My Projects</h2>
@@ -41,5 +38,6 @@ include('database/model/project.php');
 				</div>
 			</div>
 		</main>
-	</body>
-</html>
+<?php
+include_relative('views/footer.php');
+?>
