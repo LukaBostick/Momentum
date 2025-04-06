@@ -1,9 +1,12 @@
 <?php
+session_start();
+
 // Define our project’s root directory, since includes() change cwd.
 define('ROOT', getcwd());
 
 // PHP 4.0 doesn’t define DIRECTORY_SEPARATOR, so we will.
-define('DIRECTORY_SEPARATOR', PHP_OS == 'WINNT' ? '\\' : '/');
+if (!defined('DIRECTORY_SEPARATOR'))
+	define('DIRECTORY_SEPARATOR', PHP_OS == 'WINNT' ? '\\' : '/');
 
 // Create a path relative to the project’s root.
 function relative($path) {
@@ -13,7 +16,7 @@ function relative($path) {
 // Used globals!
 $GLOBALS['old'] = array(); // Old values of a form to be edited & resubmitted.
 
-session_start();
+// PHP 4.0 doesn’t have $_SESSION, sooo… @w@
 if ($_SESSION && $_SESSION["user_email"])
 	$GLOBALS["user_email"] = $_SESSION["user_email"];
 
