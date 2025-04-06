@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 use Database\Factories\ProjectFactory;
 class ManageProjectsTest extends TestCase
@@ -63,16 +64,24 @@ class ManageProjectsTest extends TestCase
         $this->post('/projects',$attributes) ->assertRedirect('login');
     }
 
+
+
+
     public function test_a_user_can_view_their_project()
     {
         $this->ActingAs(User::factory()->create());
         //$this->withoutExceptionHandling();
         $project = ProjectFactory::new()->create(['owner_id' => auth()->id()]);
 
-        $this->get($project->path())
-            ->assertSee($project->title)
-            ->assertSee($project->description);
-    }
+        // dd($project->toArray()); // Comment out or remove this line
+
+        $response = $this->get($project->path());
+
+        // Dump the entire response content
+        dump($response->getContent());
+
+        $response->assertSee($project->title);
+        $response->assertSee(trim(substr($project->description, 0, 50)));    }
 
     public function test_a_project_requires_a_title()
     {

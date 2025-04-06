@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\ProjectTasksController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +29,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('projects', [ProjectsController::class, 'store'])->name('projects.store');
     Route::get('projects/create', [ProjectsController::class, 'create'])->name('projects.create');
     Route::get('projects/{project}', [ProjectsController::class, 'show'])->name('projects.show');
-    // ... other authenticated project routes
+
+    Route::post('/projects/{project}/tasks', [ProjectTasksController::class, 'store'])->name('project.tasks.store');
 });
 
 Route::get('/', function () {

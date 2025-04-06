@@ -15,10 +15,18 @@
                 <div class="mb-8">
                 <h2 class="text-lg text-gray-400 font-normal mb-3">Tasks</h2>
                             {{--Tasks--}}
-                <div class="card mb-3">Lorem Ipsem. </div>
-                    <div class="card mb-3">Lorem Ipsem. </div>
-                    <div class="card mb-3">Lorem Ipsem. </div>
-                    <div class="card">Lorem Ipsem. </div>
+                            @forelse ($project->tasks as $task)
+                                <div class="card mb-3">{{$task->body}}</div>
+                    @empty
+
+                    @endforelse
+                    <div class="card mb-3">
+                        <form action="{{$project->path().'/tasks'}}"method="POST">
+                            @csrf
+
+                            <input placeholder="Begin adding tasks..." class="w-full" name="body">
+                        </form>
+                    </div>
                     </div>
 
                     <div>
