@@ -1,4 +1,6 @@
 <?php
+if ($GLOBALS['user_email']) { header('Location: /'); }
+
 include(relative('views/header.php'));
 ?>
 

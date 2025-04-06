@@ -11,6 +11,7 @@ function relative($path) {
 }
 
 // Used globals!
+session_start();
 $GLOBALS['old'] = array(); // Old values of a form to be edited & resubmitted.
 
 // Perform routing, kicking off everything.
