@@ -30,7 +30,7 @@
 							<!-- Right Side Of Navbar -->
 							<ul class="navbar-nav ms-auto">
 								<!-- Authentication Links -->
-								<?php if (!$GLOBALS["account"]) { ?>
+								<?php if (!$GLOBALS["user_email"]) { ?>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/login">Login</a>
                                 </li>
@@ -41,7 +41,7 @@
 								<?php } else { ?>
 								<li class="nav-item dropdown">
 									<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<?php echo "Username here" ?>
+										<?php echo $GLOBALS["user_email"]; ?>
 									</a>
 
 									<div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
