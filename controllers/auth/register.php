@@ -1,10 +1,11 @@
 <?php
 include(relative('database/store.php'));
-include(relative('database/store.php'));
 include(relative('database/model/user.php'));
 
 global $HTTP_POST_VARS;
 
+$HTTP_POST_VARS = $_POST;
+print_r($HTTP_POST_VARS);
 $GLOBALS['old'] = $HTTP_POST_VARS;
 unset($GLOBALS['old']['password']);
 unset($GLOBALS['old']['password_confirmation']);

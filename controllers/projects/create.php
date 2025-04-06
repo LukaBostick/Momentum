@@ -10,7 +10,7 @@ $GLOBALS['old'] = $HTTP_POST_VARS;
 if (strlen($HTTP_POST_VARS["title"]) < 3) {
 	$GLOBALS['error'] = "title";
 	$GLOBALS['errorMessage'] = "Your project’s title must be at least 3 characters long!";
-	include(relative('views/projects/register.php'));
+	include(relative('views/projects/create.php'));
 	exit;
 }
 

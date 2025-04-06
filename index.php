@@ -20,6 +20,9 @@ $GLOBALS['old'] = array(); // Old values of a form to be edited & resubmitted.
 if ($_SESSION && $_SESSION["user_email"])
 	$GLOBALS["user_email"] = $_SESSION["user_email"];
 
+if (is_array($_POST))
+	$HTTP_POST_VARS = $_POST;
+
 // Perform routing, kicking off everything.
 include(relative('routes.php'));
 ?>
