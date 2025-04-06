@@ -28,7 +28,7 @@
             <div class="flex justify-between items-center py-2o">
                 <h1>
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="/Users/pmo/Herd/main/resources/views/layouts/public/images/logo.png" alt="WeHack">
+                        <h2 >WeHack</h2>
                     </a>
                 </h1>
                 <div>
