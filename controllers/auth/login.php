@@ -37,5 +37,5 @@ if (function_exists("session_register"))
 else
 	$_SESSION["user_email"] = $GLOBALS['user_email'];
 
-header('Location: /?msg=login');
+header('Location: /projects');
 ?>
