@@ -1,0 +1,1 @@
+O:4:"User":6:{s:4:"name";s:4:"luka";s:5:"email";s:13:"test@test.com";s:8:"password";s:32:"e1a3691d26bed2c4f396a2a82cdcdd81";s:8:"projects";N;s:17:"email_verified_at";N;s:2:"id";s:13:"test@test.com";}
