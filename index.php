@@ -6,15 +6,11 @@ define('ROOT', getcwd());
 define('DIRECTORY_SEPARATOR', PHP_OS == 'WINNT' ? '\\' : '/');
 
 // Create a path relative to the project’s root.
-function relative_path($path) {
+function relative($path) {
 	return ROOT . DIRECTORY_SEPARATOR . str_replace("/", DIRECTORY_SEPARATOR, $path);
 }
 
-// include() a file from a path relative to project root.
-function include_relative($path) {
-	include(relative_path($path));
-}
 
 // Perform routing, kicking off everything.
-include_relative('routes.php');
+include(relative('routes.php'));
 ?>

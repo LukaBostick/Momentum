@@ -9,7 +9,7 @@ class User {
 	var $email_verified_at;
 }
 
-include_relative('config/store.php');
+include(relative('config/store.php'));
 
 if (!is_dir($GLOBALS['db_path'] . '/users'))
 	mkdir($GLOBALS['db_path'] . '/users', 0777);

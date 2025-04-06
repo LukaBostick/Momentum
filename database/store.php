@@ -2,7 +2,7 @@
 // The basic object-store, since we want to avoid the pain that is setting up an old enough PGSQL.
 define('STORE_LOADED', true); if (STORE_LOADED) return;
 
-include_relative('config/store.php');
+include(relative('config/store.php'));
 
 if (!is_dir($GLOBALS['db_path']))
     mkdir($GLOBALS['db_path'], 0777);
@@ -60,8 +60,7 @@ function object_path($obj) {
 
 // Return the directory-path corresponding to an object $type (e.g., “project”).
 function type_path($type) {
-	return relative_path($GLOBALS['db_path'] . '/' . strtolower($type) . 's/');
+	return relative('store' . '/' . strtolower($type) . 's/');
 }
-
 
 ?>

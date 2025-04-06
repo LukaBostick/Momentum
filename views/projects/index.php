@@ -1,8 +1,8 @@
 <?php
-include_relative('database/store.php');
-include_relative('database/model/project.php');
+include(relative('database/store.php'));
+include(relative('database/model/project.php'));
 
-include_relative('views/header.php');
+include(relative('views/header.php'));
 ?>
 		<header class="mb-3 flex items-center py-4">
 			<div class="flex w-full items-center justify-between">
@@ -39,5 +39,5 @@ include_relative('views/header.php');
 			</div>
 		</main>
 <?php
-include_relative('views/footer.php');
+include(relative('views/footer.php'));
 ?>

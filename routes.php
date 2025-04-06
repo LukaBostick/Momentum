@@ -10,7 +10,7 @@ $GLOBALS['POST'] = array("/register" => "auth/register.php");
 
 // Execute the appropraite file for the given URI.
 function route($uri, $method) {
-	include_relative(($method == "GET" ? "views/" : "controllers/") . find_route($uri, $method));
+	include(relative(($method == "GET" ? "views/" : "controllers/") . find_route($uri, $method)));
 }
 
 // Find the appropriate file to execute for a given URI.
