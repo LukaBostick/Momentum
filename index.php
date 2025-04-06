@@ -16,5 +16,5 @@ function include_relative($path) {
 }
 
 // Perform routing, kicking off everything.
-include_relative('routes.php')
+include_relative('routes.php');
 ?>
