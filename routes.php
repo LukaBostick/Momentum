@@ -5,7 +5,7 @@ $GLOBALS['GET'] = array("/" => "welcome.php", "/projects" => "projects/index.php
 						"/login" => "auth/login.php", "/register" => "auth/register.php",
 	                    "/resources" => "verbatim.php", "/public" => "verbatim.php");
 // The list of URIs associated with their files in post/.
-$GLOBALS['POST'] = array("/register" => "auth/register.php");
+$GLOBALS['POST'] = array("/register" => "auth/register.php", "/login" => "auth/login.php");
 
 
 // Execute the appropraite file for the given URI.

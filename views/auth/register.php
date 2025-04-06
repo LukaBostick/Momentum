@@ -1,7 +1,4 @@
 <?php
-include(relative('database/store.php'));
-include(relative('database/model/project.php'));
-
 include(relative('views/header.php'));
 ?>
 
