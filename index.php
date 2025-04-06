@@ -10,6 +10,8 @@ function relative($path) {
 	return ROOT . DIRECTORY_SEPARATOR . str_replace("/", DIRECTORY_SEPARATOR, $path);
 }
 
+// Used globals!
+$GLOBALS['old'] = array(); // Old values of a form to be edited & resubmitted.
 
 // Perform routing, kicking off everything.
 include(relative('routes.php'));
