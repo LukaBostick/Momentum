@@ -1,4 +1,6 @@
 <?php
+define('USER_LOADED', true); if (USER_LOADED) return;
+
 class User {
 	var $name;
 	var $email;

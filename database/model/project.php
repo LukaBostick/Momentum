@@ -1,4 +1,6 @@
 <?php
+define('PROJECT_LOADED', true); if (PROJECT_LOADED) return;
+
 class Project {
 	var $title;
 	var $owner_id;

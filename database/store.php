@@ -1,5 +1,6 @@
 <?php
 // The basic object-store, since we want to avoid the pain that is setting up an old enough PGSQL.
+define('STORE_LOADED', true); if (STORE_LOADED) return;
 
 include_relative('config/store.php');
 
