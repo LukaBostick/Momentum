@@ -2,6 +2,7 @@
 
 @section("content")
     <main>
+
         <div class="relative flex flex-col h-screen items-center justify-center bg-white dark:bg-black transition-bg">
             <div class="absolute inset-0 overflow-hidden">
                 <div class="jumbo absolute -inset-2.5 opacity-50"></div>
