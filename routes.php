@@ -1,13 +1,15 @@
 <?php
 
 // The list of URIs associated with their views in get/.
-$GLOBALS['GET'] = array("/" => "views/index.php", "/projects" => "views/projects/index.php",
+$GLOBALS['GET'] = array("/" => "views/index.php",
+						"/projects" => "views/projects/index.php", "/projects/create" => "views/projects/create.php",
 	                    "/login" => "views/auth/login.php", "/register" => "views/auth/register.php",
 	                    "/logout" => "controllers/auth/logout.php",
 	                    "/resources" => "views/verbatim.php", "/public" => "views/verbatim.php");
 // The list of URIs associated with their files in post/.
 $GLOBALS['POST'] = array("/register" => "controllers/auth/register.php",
-	                     "/login" => "controllers/auth/login.php");
+	                     "/login" => "controllers/auth/login.php",
+						 "/projects/create" => "controllers/projects/create.php");
 
 
 // Execute the appropraite file for the given URI.
