@@ -11,8 +11,11 @@ function relative($path) {
 }
 
 // Used globals!
-session_start();
 $GLOBALS['old'] = array(); // Old values of a form to be edited & resubmitted.
+
+session_start();
+if ($_SESSION && $_SESSION["user_email"])
+	$GLOBALS["user_email"] = $_SESSION["user_email"];
 
 // Perform routing, kicking off everything.
 include(relative('routes.php'));

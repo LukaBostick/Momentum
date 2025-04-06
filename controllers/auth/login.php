@@ -32,7 +32,10 @@ if ($user->password != $hashed_password) {
 }
 
 $GLOBALS['user_email'] = $HTTP_POST_VARS["email"];
-session_register("user_email");
+if (function_exists("session_register"))
+	session_register("user_email");
+else
+	$_SESSION["user_email"] = $GLOBALS['user_email'];
 
 header('Location: /?msg=login');
 ?>
