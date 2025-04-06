@@ -40,7 +40,9 @@ $new_user = new User();
 $new_user->name = $HTTP_POST_VARS['name'];
 $new_user->email = $HTTP_POST_VARS['email'];
 $new_user->id = $new_user->email;
-$new_user->password = md5($HTTP_POST_VARS['password']);
+
+$password = $HTTP_POST_VARS['password'];
+$new_user->password = function_exists("sha256") ? sha256($pasword) : md5($password);
 
 if (object_exists("user", $new_user->email)) {
 	$GLOBALS['error'] = "email";

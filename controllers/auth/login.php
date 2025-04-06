@@ -21,7 +21,10 @@ if (strlen($HTTP_POST_VARS["email"]) < 3) {
 }
 
 $user = find_object("user", $HTTP_POST_VARS["email"]);
-if ($user->password != md5($HTTP_POST_VARS["password"])) {
+$password = $password = $HTTP_POST_VARS['password'];
+$hashed_password = function_exists("sha256") ? sha256($pasword) : md5($password);
+
+if ($user->password != $hashed_password) {
 	$GLOBALS["error"] = "password";
 	$GLOBALS["errorMessage"] = "The password is incorrect!";
 	include(relative('views/auth/login.php'));
