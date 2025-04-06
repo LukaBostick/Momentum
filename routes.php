@@ -1,7 +1,7 @@
 <?php
 
 // The list of URIs associated with their views in get/.
-$GLOBALS['GET'] = array("/" => "views/welcome.php", "/projects" => "views/projects/index.php",
+$GLOBALS['GET'] = array("/" => "views/index.php", "/projects" => "views/projects/index.php",
 	                    "/login" => "views/auth/login.php", "/register" => "views/auth/register.php",
 	                    "/logout" => "controllers/auth/logout.php",
 	                    "/resources" => "views/verbatim.php", "/public" => "views/verbatim.php");

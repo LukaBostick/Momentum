@@ -34,5 +34,5 @@ if ($user->password != $hashed_password) {
 $GLOBALS['user_email'] = $HTTP_POST_VARS["email"];
 session_register("user_email");
 
-header('Location: /');
+header('Location: /?msg=login');
 ?>

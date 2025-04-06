@@ -52,6 +52,6 @@ if (object_exists("user", $new_user->email)) {
 }
 
 write_object($new_user);
-header('Location: ' . '/register');
+header('Location: ' . '/?msg=register');
 
 ?>
