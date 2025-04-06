@@ -1,0 +1,15 @@
+@import url("https://fonts.bunny.net/css?family=Nunito");
+.button {
+  @apply .bg-blue .text-white .no-underline .rounded-lg .py-2 .px-5 text-sm;
+  box-shadow: 0 2pt 7px 0 #b0eaff;
+}
+
+.section {
+  @apply .px-4;
+}
+
+.card {
+  @apply .bg-white. p-5 rounded-lg shadow;
+}
+
+/*# sourceMappingURL=app.css.map */

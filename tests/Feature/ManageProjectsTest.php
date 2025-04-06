@@ -40,7 +40,7 @@ class ManageProjectsTest extends TestCase
         //$this->withoutMiddleware();
         //$this->withoutExceptionHandling();
 
-        $this->actingAs(User::factory()->create());
+        $this->signIn();
 
         $attributes = [
             'title' => $this->faker->sentence,
@@ -65,7 +65,7 @@ class ManageProjectsTest extends TestCase
 
     public function test_a_user_can_view_their_project()
     {
-        $this->be(User::factory()->create());
+        $this->ActingAs(User::factory()->create());
         //$this->withoutExceptionHandling();
         $project = ProjectFactory::new()->create(['owner_id' => auth()->id()]);
 
@@ -78,7 +78,7 @@ class ManageProjectsTest extends TestCase
     {
         //$this->withoutExceptionHandling();
 
-        $this->actingAs(User::factory()->create());
+        $this->signIn();
         $attributes = ProjectFactory::new()->raw(['title' => '']);
         $this->post('/projects',$attributes) ->assertSessionHasErrors('title');
     }
@@ -88,13 +88,13 @@ class ManageProjectsTest extends TestCase
     public function test_a_project_requires_a_description()
     {
         //$this->withoutExceptionHandling();
-        $this->actingAs(User::factory()->create());
+        $this->signIn();
         $attributes = ProjectFactory::new()->raw(['description' => '']);
         $this->post('/projects',$attributes) ->assertSessionHasErrors('description');
     }
     public function test_an_authenticated_user_cannot_view_the_projects_of_others()
     {
-        $this->be(User::factory()->create());
+        $this->signIn();
         // $this->withoutExceptionHandling();
         $project = ProjectFactory::new()->create();
 

@@ -18,5 +18,13 @@ class ProjectTest extends TestCase
 
         $this->assertEquals("/projects/". $project ->id, $project->path());
     }
+    public function test_it_can_add_a_task(){
+        $project = ProjectFactory::new()->create();
+
+        $task= $project->addTask('lorem ipsum');
+
+       $this->assertCount(1, $project->tasks);
+        $this->assertTrue($project->tasks->contains($task));
+    }
 }
 
